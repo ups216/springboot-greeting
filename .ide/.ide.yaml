@@ -1,0 +1,35 @@
+version: smartide/v0.2
+orchestrator:
+  type: docker-compose
+  version: 3
+workspace:
+  dev-container:
+    service-name: springboot-greeting-dev
+    webide-port: 6800
+    ide-type: vscode
+    volumes: 
+      git-config: true
+      ssh-key: true
+  services:
+    springboot-greeting-dev:
+      container_name: springboot-greeting-dev
+      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-java-opvscode:latest
+      restart: always
+      environment:
+        POSTGRES_HOST_AUTH_METHOD: trust
+        ROOT_PASSWORD: root123
+        TZ: Asia/Shanghai
+      volumes:
+        - $HOME/.m2/repository:/root/.m2/repository
+        - .:/home/project
+      expose:
+        - 3000
+        - 9080
+      ports:
+        - 9080:9080
+      networks:
+        - springboot-greeting-dev-network
+
+  networks:
+    springboot-greeting-dev-network:
+      external: true
