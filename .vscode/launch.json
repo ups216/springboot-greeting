@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GreetingApplication<greeting>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.greeting.GreetingApplication",
+            "projectName": "greeting",
+            "args": ""
+        }
+    ]
+}
