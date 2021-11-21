@@ -13,7 +13,7 @@ workspace:
   services:
     springboot-greeting-dev:
       container_name: springboot-greeting-dev
-      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-java-opvscode:latest
+      image: registry.cn-hangzhou.aliyuncs.com/smartide/smartide-java-opvscode:1202
       restart: always
       environment:
         POSTGRES_HOST_AUTH_METHOD: trust
